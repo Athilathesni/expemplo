@@ -31,3 +31,27 @@ document.getElementById('frm').addEventListener('submit',async function (e) {
 
     
  });
+
+ async function picture() {
+    const file =document.getElementById("pic").files[0]
+    pic=await convertBase64(file)
+    console.log(pic);
+    document.getElementById('img').script
+    
+ }
+
+
+
+
+ function convertBase64(file){
+    return new Promise((resolve, reject) => {
+        const fileReader=new FileReader()
+        fileReader.readAsDataURL(file)
+        fileReader.onload=()=>{
+            resolve(fileReader.result)
+        }
+        fileReader.onerror=()=>{
+            reject(error)
+        }
+    })
+ }
