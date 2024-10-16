@@ -1,6 +1,6 @@
 async function getEmployees() {
 
-    const res = await fetch("http://localhost:3000/api/getemployee");
+    const res = await fetch("http://localhost:4000/api/getemployee");
     const employee=await res.json();
     console.log(employee);
     str=``;
@@ -8,7 +8,7 @@ async function getEmployees() {
         str+=`
         <div id="card">
                
-                    <img src="${employe.pic}" alt="no image">
+                    <img src="${employe.pic}" alt="noimage">
                     <div>
                         <div id="EmpID">${employe.empid}</div>
                         <div id="Name">${employe.name}</div>
@@ -31,7 +31,7 @@ async function getEmployees() {
 getEmployees()
 
 function deleteemp(id) {
-    fetch(`http://localhost:3000/api/deleteEmp/${id}`,{
+    fetch(`http://localhost:4000/api/deleteEmp/${id}`,{
         method:"DELETE",
         headers:{"Content-Type":"application/json"}
     })

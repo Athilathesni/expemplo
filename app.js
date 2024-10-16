@@ -4,10 +4,10 @@ import connection from "./connection.js";
 import path from 'path';
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 app.use(express.static('frontend'));  
-app.use(express.json());
+app.use(express.json({limit:'50mb'}));
 app.use('/api', Router);
 
 app.get('/', (req, res) => {
